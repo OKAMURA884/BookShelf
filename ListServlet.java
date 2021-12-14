@@ -1,0 +1,72 @@
+package servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.BookDAO;
+import model.Book;
+import model.User;
+
+/**
+ * Servlet implementation class ListServlet
+ */
+@WebServlet("/ListServlet")
+public class ListServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ListServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		String message="";
+		String action = request.getParameter("action");
+		HttpSession session = request.getSession();
+		 User user =  (User)session.getAttribute("user");
+		 BookDAO bookDAO=new BookDAO();
+		 List<Book> list=new ArrayList<>();
+		if(action.equals("all")){
+		list=bookDAO.findAll(user);
+		message="全件検索";
+		}else if(action.equals("unread")){
+		list=bookDAO.findUnread(user);
+		message="未読リスト";
+		}else if(action.equals("read")){
+		list=bookDAO.findRead(user);
+		message="既読リスト";
+		}else if(action.equals("want")){
+		list=bookDAO.findWant(user);
+		message="読みたいリスト";
+		}
+
+		request.setAttribute("message", message);
+		session.setAttribute("list",list);
+		       request.getRequestDispatcher("/WEB-INF/jsp/myPage.jsp").forward(request, response);
+	}
+
+}

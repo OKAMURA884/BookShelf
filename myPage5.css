@@ -1,0 +1,320 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:#ffffff;
+}
+
+
+
+
+
+
+p{
+	padding:20px 30px;
+	top:10;
+	font-weight:bold;
+	font-size:20px;
+	color:#0080c0;
+	
+	
+}
+
+
+
+header {
+    height: 10vh;
+    background-color: rgb(255, 255, 128);
+    color: #808080;
+ }
+ 
+ header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+   width:100%;
+ }
+ .inner h1{
+ width:80%;
+ }
+ header ul {
+    width:20%;
+    display: flex;
+ }
+ 
+ header li {
+    padding: 0 5px;
+ }
+ li {
+   list-style: none;
+}
+
+.mainvisual {
+    height: 80vh;
+    background-image: url(book.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.form-wrapper {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 20px;
+    max-width: 370px;
+    width: 100%;
+}
+
+.form-item {
+    margin-bottom: 0.75em;
+    width: 100%;
+}
+
+.form-item input {
+    border: none;
+    border-bottom: 2px solid #e9e9e9;
+    width: 100%;
+    height: 50px;
+    font-size: 1em;
+}
+
+.form-item input:focus {
+    border-bottom: 2px solid #c0c0c0;
+    outline: none;
+}
+
+.button-panel {
+    width: 100%;
+}
+
+.button-panel .button {
+    background: #62a5f1;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
+    width: 100%;
+}
+
+.button:hover {
+    background: #3e5eee;
+}
+
+.button-panel .button2 {
+    background: rgb(255, 128, 128);
+    border: none;
+    color: rgb(255, 255, 255);
+    height: 30px;
+    font-size: 1em;
+    text-align:center;
+    width: 100px;
+    border-radius: 25px;
+    
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+    margin-right: 5px;
+    transform: translateX(-50%);
+}
+.button-panel .button4 {
+    background: rgb(255, 128, 128);
+    border: none;
+    color: rgb(255, 255, 255);
+    height: 30px;
+    font-size: 1em;
+    text-align:center;
+    width: 100px;
+    border-radius: 25px;
+    
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+    margin-right: 5px;
+    transform: translateX(-50%);
+}
+.button2:hover {
+    background: rgb(255, 128, 192);
+    }
+.button4:hover {
+    background: rgb(255, 128, 192);
+    }
+
+.button-panel .button3 {
+    background:#0080c0;
+    border: none;
+    color: #fff;
+    height: 30px;
+    font-size: 15px;
+    text-align:center;
+    width: 110px;
+	margin: 0 auto;
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+/*     margin-left: 50%;
+    transform: translateX(-50%); */
+}
+.button3:hover {
+    background: #0000ff;
+}
+
+
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.prev,.next{
+    display: inline-block;
+    background: #0bd;
+    color: #fff;
+    margin: 0 1px;
+}
+.prev:hover,
+.next:hover{
+    background: #0009aa;
+}
+.prev{
+    border-radius: 2rem 0 0 2rem;
+    padding: 1rem 1rem 1rem 2rem;
+}
+.next{
+    border-radius: 0 2rem 2rem 0;
+    padding: 1rem 2rem 1rem 1rem;
+}
+.prev::before,
+.next::after{
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+}
+.prev::before{
+    content: "\f060";
+    margin-right: .5rem;
+}
+.next::after{
+    content: "\f061";
+    margin-left: .5rem;
+}
+
+.form-footer {
+    font-size: 1em;
+    padding: 2em 0;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+.form-footer a {
+    color: #8c8c8c;
+    text-decoration: none;
+    transition: border-color 0.3s;
+}
+
+.form-footer a:hover {
+    border-bottom: 1px dotted #8c8c8c;
+}
+
+/*フォーム全体*/
+#form1{
+
+position: relative; /*フォームの相対位置*/
+right:570px;
+	max-width:100px;/*フォームのサイズ*/
+margin-bottom:15px;/*フォームの下に余白*/	
+
+}
+/*検索ボックス*/
+#sbox{
+position:absolute;/*フォームの絶対位置*/	
+left:0;
+top:0; 	
+outline:0;/*クリック時の青い枠線消す*/	
+height:30px;/*検索ボックスの高さ*/	
+padding:0px;/*テキスト位置調整*/	 
+border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/		
+background:#eee;/*検索ボックスの背景カラー*/		
+}
+/*検索ボタン*/
+#sbtn{
+width:70px;/*検索ボタンの横幅*/ 
+height:30px;/*検索ボタンの縦幅*/ 
+position:absolute;/*検索ボタンの絶対位置*/  
+left:155px;/*検索ボタンの位置調整*/  
+top:0;
+border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
+background:#7fbfff;/*検索ボタンの背景カラー*/ 
+border:none;/*検索ボタンの枠線を消す*/ 
+color:#fff;/*検索ボタンのテキストカラー*/ 
+font-weight:bold;/*検索ボタンのテキスト太字*/ 
+font-size:16px;/*検索ボタンのフォントサイズ*/ 
+}
+/*検索ボタンマウスオーバー時*/
+#sbtn:hover{
+color:rgb(102, 102, 102);/*検索ボタンマウスオーバー時のフォントカラー*/ 
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* th{
+  color:white; 文字色
+  background-color: #2196f3; 背景色
+} */
+
+
+/* テーブルデザイン */
+.design {
+ width: 100%;
+ text-align: center;
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+.design tr:nth-child(2n+1) {
+ background: #e9faf9;
+}
+.design th {
+ padding: 10px;
+ background: #778ca3;
+ border-right: solid 1px #778ca3;
+ color: #ffffff;
+}
+.design th:last-child {
+ border-right: none;
+}
+.design td {
+ padding: 10px;
+ border-right: solid 1px #778ca3; 
+}
+.design td:last-child {
+ border-right: none;
+}
+.container{
+	display:flex;
+}
+.container .button-panel{
+	justify-content: space-between;
+	margin:10px 10px;
+}
+
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+/*     margin-left: 50%;
+    transform: translateX(-50%); */
+
